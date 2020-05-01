@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DisplayID</key>
+	<integer>69992768</integer>
+	<key>GeekletFrame</key>
+	<string>{{-19, 25.91015625}, {1194, 174}}</string>
+	<key>HasShadow</key>
+	<false/>
+	<key>Identifier</key>
+	<string>org.tynsoe.geeklet.web</string>
+	<key>Interpreter</key>
+	<string></string>
+	<key>Name</key>
+	<string>Wetter</string>
+	<key>RefreshInterval</key>
+	<integer>3600</integer>
+	<key>RelativePosition</key>
+	<integer>1</integer>
+	<key>Script</key>
+	<string>
+</string>
+	<key>URL</key>
+	<string>/Users/michel/src/geektool-scripts/weather.html</string>
+	<key>WebGeekletType</key>
+	<integer>0</integer>
+</dict>
+</plist>

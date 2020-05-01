@@ -1,0 +1,5 @@
+date +%A size 18
+date +%A size 100
+date +"%H:%M:%S" size 24
+date +%B size 36
+font: source sans pro

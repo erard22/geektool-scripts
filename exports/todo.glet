@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DisplayID</key>
+	<integer>69992768</integer>
+	<key>GeekletFrame</key>
+	<string>{{-0.08984375, 209}, {654, 564}}</string>
+	<key>HasShadow</key>
+	<false/>
+	<key>Identifier</key>
+	<string>org.tynsoe.geeklet.web</string>
+	<key>Interpreter</key>
+	<string>/bin/bash</string>
+	<key>RefreshInterval</key>
+	<integer>30</integer>
+	<key>Script</key>
+	<string>#!/usr/bin/env bash
+
+echo "
+&lt;html&gt;
+  &lt;style&gt;
+    * {  margin: 0; padding: 0; }
+    body { padding-top: 30px; color: rgba(255, 255, 255, 0.5); font-family: 'Avenir'; font-size: 16px; font-weight: 500; }
+    small { font-size: 8px; position: relative; top: -0.5em; }
+    div { display: flex; align-items: center; padding: 2px 0 2px 2px; margin: 0 0 2px; border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+    div:last-child { border-bottom: 0; }
+    em { font-style: normal; color: rgba(255, 255, 255, 0.9); font-weight: 600; text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); }
+    span { width: 14px; text-align: center; margin: 0 10px 0 0; font-size: 14px; }
+    strong { font-size: 10px; margin: 0 0 0 8px; opacity: 0.85; }
+    h3 { color: white; opacity: 0.9; }
+  &lt;/style&gt;
+  &lt;body&gt;
+
+&lt;h3&gt;Things:&lt;/h3&gt;
+&lt;br/&gt;
+"
+
+/usr/local/bin/things.sh today | awk -F'|' '{print "&lt;div style=\"opacity: 0.9\"&gt;&lt;span&gt;&lt;img src=\"https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/check-square-blue-512.png\" height=16 /&gt;&lt;/span&gt; &lt;em&gt;"$2"&lt;/em&gt;&lt;strong&gt;"$1"&lt;/strong&gt;&lt;/div&gt;"}'
+
+echo "
+  &lt;/body&gt;
+&lt;/html&gt;
+"
+
+exit 0</string>
+	<key>WebGeekletType</key>
+	<integer>1</integer>
+</dict>
+</plist>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DisplayID</key>
+	<integer>69992768</integer>
+	<key>GeekletFrame</key>
+	<string>{{-3.08984375, 782}, {937, 394}}</string>
+	<key>HasShadow</key>
+	<false/>
+	<key>Identifier</key>
+	<string>org.tynsoe.geeklet.web</string>
+	<key>Interpreter</key>
+	<string>/bin/bash</string>
+	<key>Name</key>
+	<string>docker ps</string>
+	<key>Opacity</key>
+	<real>1</real>
+	<key>RefreshInterval</key>
+	<integer>5</integer>
+	<key>Script</key>
+	<string>#!/usr/bin/env bash
+
+echo "
+&lt;html&gt;
+  &lt;style&gt;
+    * {  margin: 0; padding: 0; }
+    body { padding-top: 30px; color: rgba(255, 255, 255, 0.5); font-family: 'Avenir'; font-size: 16px; font-weight: 500; }
+    small { font-size: 8px; position: relative; top: -0.5em; }
+    td { align-items: left; padding: 2px 20px 2px 2px; margin: 0 0 2px; border-bottom: 1px solid rgba(255, 255, 255, 0.25);}
+    tr { }
+    div:last-child { border-bottom: 0; }
+    em { font-style: normal; color: rgba(255, 255, 255, 0.9); font-weight: 600; text-shadow: 0 0 2px rgba(0, 0, 0, 0.5); }
+    strong { font-size: 10px; margin: 0 0 0 8px; opacity: 0.85; }
+    h3 { color: white; opacity: 0.9; }
+  &lt;/style&gt;
+  &lt;body&gt;
+
+&lt;h3&gt;Docker:&lt;/h3&gt;
+&lt;br/&gt;
+&lt;table&gt;
+"
+
+/usr/local/bin/docker ps --format '{{.Names}}|{{.Image}}|{{.Status}}|{{.Size}}' | awk -F'|' '{print "&lt;tr style=\"opacity: 0.9\"&gt;&lt;td&gt;&lt;em&gt;"$1"&lt;/em&gt;&lt;/td&gt;&lt;td&gt;"$2"&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;strong&gt;"$3"&lt;/strong&gt;&lt;strong&gt;("$4")&lt;/strong&gt;&lt;td&gt;&lt;/tr&gt;"}'
+
+echo "
+&lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+"
+
+exit 0
+</string>
+	<key>WebGeekletType</key>
+	<integer>1</integer>
+	<key>Zoom</key>
+	<real>0.99479166666666663</real>
+</dict>
+</plist>
